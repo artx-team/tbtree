@@ -5,4 +5,11 @@ target_include_directories(test_tbtree BEFORE PRIVATE
     ${CUNIT_INCLUDE_DIRS}
 )
 target_compile_options(test_tbtree PRIVATE ${TBTREE_C_FLAGS})
-add_test(NAME test_tbtree COMMAND test_tbtree)
+
+if(VALGRIND)
+    add_test(NAME test_tbtree
+             COMMAND ${VALGRIND} ${VALGRIND_OPTIONS} ${CMAKE_CURRENT_BINARY_DIR}/test_tbtree)
+else()
+    add_test(NAME test_tbtree
+             COMMAND test_tbtree)
+endif()

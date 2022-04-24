@@ -1,1 +1,1 @@
-install(FILES tbtree.h DESTINATION include)
+install(FILES tbtree.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
