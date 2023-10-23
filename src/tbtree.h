@@ -16,7 +16,7 @@
 #endif
 
 #ifndef __tbtree_unused
-#   if defined(__GNUC__) || __tbtree_has_attribute(__unused__)
+#   if __tbtree_has_attribute(__unused__)
 #       define __tbtree_unused __attribute__((__unused__))
 #   else
 #       define __tbtree_unused
